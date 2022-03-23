@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author springuser05
  *
  */
-@Component
+@Component   
 public class CustomerImpl implements Customer{
 	
 	public String CreateCustomer(String msg)

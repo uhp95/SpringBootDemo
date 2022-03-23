@@ -12,10 +12,10 @@ import com.tcs.configuration.CustomerConfiguration;
 import com.tcs.service.Customer;
 import com.tcs.service.HelloWorld;
 
-@SpringBootApplication
-@Import({AppConfig.class,CustomerConfiguration.class})
-@ComponentScan ("com.tcs.*")
-//@EnableAutoConfiguration
+@SpringBootApplication      //Instantiate the application 
+@Import({AppConfig.class,CustomerConfiguration.class})   //Imports the required classes. Its not mandatory if the classes are in same package
+@ComponentScan ("com.tcs.*")  //Used for scanning the beans 
+@EnableAutoConfiguration  // To Enable auto configuration. Not mandatory.
 
 public class TcSdemoApplication {
 
