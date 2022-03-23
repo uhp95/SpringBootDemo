@@ -15,7 +15,7 @@ import com.tcs.service.HelloWorld;
 @SpringBootApplication
 @Import({AppConfig.class,CustomerConfiguration.class})
 @ComponentScan ("com.tcs.*")
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 
 public class TcSdemoApplication {
 
@@ -26,21 +26,22 @@ public class TcSdemoApplication {
 		}
 		*/
 	{
-	ApplicationContext context1 = SpringApplication.run(CustomerConfiguration.class);
+	//ApplicationContext context1 = SpringApplication.run(CustomerConfiguration.class);
 	ApplicationContext context = SpringApplication.run(AppConfig.class);
 	
 	HelloWorld obj = (HelloWorld)context.getBean("hello");
 	obj.PrintHelloWorld("I'm in...");
+	
 	
 	Customer obj1 = (Customer) context.getBean("Cust");
 	obj1.CreateCustomer("Customer Created");
 	obj1.ShowCustomer("Customer Details Displayed");
 	obj1.DeleteCustomer("Customer Details Deleted");
 	
-	Customer obj2 = (Customer) context1.getBean("Cust");
+/*	Customer obj2 = (Customer) context1.getBean("Cust");
 	obj2.CreateCustomer("Customer Created");
 	obj2.ShowCustomer("Customer Details Displayed");
-	obj2.DeleteCustomer("Customer Details Deleted");
+	obj2.DeleteCustomer("Customer Details Deleted");*/
 	
 	}
 	

@@ -5,6 +5,7 @@ package com.tcs.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 import com.tcs.service.Customer;
 import com.tcs.service.CustomerImpl;
@@ -16,15 +17,11 @@ import com.tcs.service.HelloWorldImpl;
  *
  */
 @Configuration
+@Import({CustomerConfiguration.class,HelloWorldConfig.class})
 public class AppConfig {
-	@Bean(name="hello")
+	
 
-	public HelloWorld Hello() 
-	{
-		return new HelloWorldImpl();
-	}
-
-	@Bean(name="Cust")
+	@Bean(name="Customer")
 	public Customer Cust()
 	{
 		return new CustomerImpl();

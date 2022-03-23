@@ -3,10 +3,13 @@
  */
 package com.tcs.service;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author springuser05
  *
  */
+@Component
 public class CustomerImpl implements Customer{
 	
 	public String CreateCustomer(String msg)
